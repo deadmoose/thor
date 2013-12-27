@@ -28,13 +28,13 @@ from .isld_parse import isld_parse
 def build(page_type, urls):
 	#Builds a yoweb URL
 	#Expects a tuple (ocean, type) and the island/flag/crew id or a pirate name
-    types = {"isld":"island/info.wm?islandid=", "flag":"flag/info.wm?flagid=", 
-    		"crew":"crew/info.wm?crewid=", "pirt":"pirate.wm?target="}
-    ocean = {"meri":"http://meridian", "emer":"http://emerald", "ceru":"http://cerulean"}
-    page = ".puzzlepirates.com/yoweb/"
-    for x in range(len(urls)):
-    	urls[x] = ocean[page_type[0]] + page + types[page_type[1]] + urls[x]
-    return urls
+	types = {"isld":"island/info.wm?islandid=", "flag":"flag/info.wm?flagid=", 
+		"crew":"crew/info.wm?crewid=", "pirt":"pirate.wm?target="}
+	ocean = {"meri":"http://meridian", "emer":"http://emerald", "ceru":"http://cerulean"}
+	page = ".puzzlepirates.com/yoweb/"
+	for x in range(len(urls)):
+		urls[x] = ocean[page_type[0]] + page + types[page_type[1]] + urls[x]
+	return urls
 
 def fetch(url, page_type, output):
 	#Fetches a yoweb page and times the request
