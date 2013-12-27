@@ -41,7 +41,7 @@ def fetch(url, page_type, output):
 	start = time()
 	reqs = requests.get(url)
 	html = reqs.text
-	#Should probaly be expressed in regular miliseconds
+	#Should probaly be expressed in regular milliseconds
 	func = {"pirt" : pirt_parse, "crew" : crew_parse, "flag" : flag_parse, "isld" : isld_parse}
 	save_json(func[page_type](html), output)
 	final = time() - start
